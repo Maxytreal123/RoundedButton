@@ -1,7 +1,6 @@
 package com.whomaxiswell.projects.lightning.gui;
 
 import com.whomaxiswell.projects.lightning.utils.GuiUtils;
-import com.whomaxiswell.projects.lightning.utils.RoundUtils;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.PositionedSoundRecord;
@@ -26,11 +25,6 @@ public class RoundedButton extends GuiButton {
 		this.radius = radius;
 	}
 	
-	public RoundedButton(int id, int x, int y, String text) {
-		super(id, x, y, 200, 20, text);
-		this.radius = 3;
-	}
-	
 	@Override
 	public void drawButton(Minecraft mc, int mouseX, int mouseY) {
         if (this.visible)
@@ -42,7 +36,7 @@ public class RoundedButton extends GuiButton {
             //drawRect(this.xPosition, this.yPosition, this.xPosition + this.width, this.yPosition + this.height, 0x44000000);
             //RoundUtils.drawRoundedRect(this.xPosition, this.yPosition, this.xPosition + this.width, this.yPosition + this.height, 5, 0x44000000);
 
-            RoundUtils.drawRoundedRect(this.xPosition, this.yPosition, this.xPosition + this.width, this.yPosition + this.height, this.radius, 0x44000000);
+            GuiUtils.drawRoundedRect(this.xPosition, this.yPosition, this.xPosition + this.width, this.yPosition + this.height, this.radius, 0x44000000);
 
             GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
 
